@@ -1,6 +1,6 @@
 package org.iims.model;
 
-public class login {
+public class Login {
     private String username, password, first_name, last_name;
 
     public String getUsername() {
@@ -35,9 +35,9 @@ public class login {
         this.last_name = last_name;
     }
 
-    public login(){}
+    public Login(){}
 
-    public login(String username, String password, String first_name, String last_name) {
+    public Login(String username, String password, String first_name, String last_name) {
         this.username = username;
         this.password = password;
         this.first_name = first_name;

@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @WebServlet(name = "login", urlPatterns = "/login")
-public class addLogin extends HttpServlet {
+public class AddLogin extends HttpServlet {
 
     @Override
     public void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -17,4 +17,9 @@ public class addLogin extends HttpServlet {
         RequestDispatcher requestDispatcher= req.getRequestDispatcher("login-form.jsp");
         requestDispatcher.forward(req,resp);
     }
+
+//    @Override
+//    public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+//
+//    }
 }
