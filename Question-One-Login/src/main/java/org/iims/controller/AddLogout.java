@@ -16,9 +16,8 @@ public class AddLogout extends HttpServlet {
     public void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         HttpSession session = req.getSession();
         session.removeAttribute("user");
-        if(session.getAttribute("user") == null) {
-            resp.sendRedirect("login"); // No logged-in user found, so redirect to login page.
-            session.invalidate();
-        }
+        session.invalidate();
+
+        resp.sendRedirect("login");
     }
 }
