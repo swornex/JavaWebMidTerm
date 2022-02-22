@@ -15,7 +15,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 
 @WebServlet(name = "login", urlPatterns = "/login")
-public class AddLogin extends HttpServlet {
+public class LoginController extends HttpServlet {
 
     @Override
     public void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -49,14 +49,14 @@ public class AddLogin extends HttpServlet {
                     session.removeAttribute("username");
                     session.removeAttribute("error");
                 } else {
-                    session.setAttribute("error", "Invalid Username or Password");
+                    session.setAttribute("error", "Sorry you're not registered.");
                     resp.sendRedirect("login");
                 }
             } catch (SQLException | ClassNotFoundException e) {
                 e.printStackTrace();
             }
         } else {
-            session.setAttribute("error", "Please input username or password");
+            session.setAttribute("error", "Please input username or password.");
             resp.sendRedirect("login");
         }
     }
