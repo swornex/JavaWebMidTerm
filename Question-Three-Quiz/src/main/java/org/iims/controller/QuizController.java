@@ -25,7 +25,7 @@ public class QuizController extends HttpServlet {
         if(session.getAttribute("name")!=null ){
                 session.setAttribute("name", req.getParameter("name"));
         }else{
-            if(req.getParameter("name")!=null){
+            if(req.getParameter("name").toString().length()>0){
                 session.setAttribute("name", req.getParameter("name"));
             }else {
                 session.setAttribute("name", "Guest");

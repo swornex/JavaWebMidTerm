@@ -12,6 +12,7 @@
              <c:forEach var="quiz" items="${quizzes}" varStatus="loop">
                 <div class="my-5 container p-3 shadow-sm rounded" id="${quiz.id}">
                     <p><b>${loop.count}. ${quiz.question}</b></p>
+                    <c:if test="${score==0}">
                     <div class="answers m-3 mb-0 d-flex flex-row align-items-center justify-content-between w-75 mx-auto">
                         <div><input type="radio" name="${quiz.id}" value="${quiz.answer_one}" required>
                             <label>${quiz.answer_one}</label></div>
@@ -22,6 +23,7 @@
                         <div><input type="radio" name="${quiz.id}" value="${quiz.answer_four}" required>
                             <label>${quiz.answer_four}</label></div>
                     </div>
+                    </c:if>
                     <c:if test="${score>0}">
                         <p>Answer => <i class="text-success">${quiz.correct_answer}</i></p>
                     </c:if>
